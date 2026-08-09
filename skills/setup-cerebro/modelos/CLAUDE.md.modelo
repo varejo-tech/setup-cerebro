@@ -1,0 +1,100 @@
+# O cérebro de {{DONO}}
+
+Este arquivo é o primeiro que se lê. Ele explica as regras deste cérebro — um
+repositório de notas guardado no GitHub (um site que guarda versões do que
+você salva, como um "Google Drive" pensado para texto).
+
+**Quatro leis, antes de tudo:**
+
+- **O GitHub é a fonte da verdade.** O que está salvo lá é o que vale — não o
+  que ficou só num rascunho ou na sua cabeça.
+- **O `MAPA.md` é o GPS.** Antes de procurar qualquer coisa, olhe o mapa —
+  ele diz onde cada assunto mora.
+- **A `inbox/` é a caixa de entrada.** Tudo que chega bruto para ali primeiro,
+  antes de virar parte organizada do cérebro.
+- **Canônico é o que já foi confirmado.** Só é "verdade oficial" depois que
+  alguém — você — confirmou que aquilo vale ser guardado de vez.
+
+## Como navegar
+
+Nunca saia caçando arquivo à toa. A ordem certa é: primeiro este `CLAUDE.md`,
+depois o `MAPA.md` da raiz, depois o `MAPA.md` da área certa — e só então o
+arquivo específico.
+
+## O que tem aqui dentro
+
+| Onde | O que é |
+|---|---|
+| `CLAUDE.md` | Este arquivo — as regras do cérebro. |
+| `USER.md` | Quem é você e como prefere que o agente fale com você. Carregado sempre. |
+| `MAPA.md` | O mapa da casa, para achar rápido onde cada coisa está. |
+| `README.md` | Explica o que é este cérebro. |
+| `.gitignore` | Configuração técnica: decide o que sobe para o GitHub e o que fica só na sua máquina. |
+| `.claude/skills/` | Os comandos prontos do cérebro, como `/salvar` e `/ingestao`. |
+| `contexto/` | Decisões, lições aprendidas e pessoas importantes — o que atravessa tudo. |
+| `inbox/` | A caixa de entrada — tudo que chega bruto, antes de organizar. |
+| `areas/` | As frentes da sua vida ou negócio, uma pasta por área. |
+| `arquivo/` | Material antigo já organizado, guardado como histórico — nunca se apaga. |
+
+Suas áreas hoje são: {{AREAS}} — cada uma vive numa pasta dentro de `areas/`,
+com o próprio `MAPA.md`.
+
+## Caixa de entrada × acervo organizado
+
+Rascunho, dúvida, print de conversa, transcrição de reunião → vai para a
+`inbox/`. Já foi entendido, confirmado, e vai orientar o que você faz daqui
+para a frente → vai para o acervo organizado (`contexto/` ou `areas/`). Nada
+entra no acervo organizado sem você dar o OK.
+
+## Regra de destino — onde uma nota vai morar
+
+A pergunta que decide: **"se esta nota sumisse, qual história ficaria com um
+buraco?"**
+
+- Evento de uma das suas áreas → `areas/<área>/`.
+- Conhecimento que veio de fora (artigo, vídeo, curso) → a área que você usa
+  para estudo, se tiver uma; senão, a área mais parecida.
+- Decisão que atravessa mais de uma área → `contexto/decisions.md`.
+- Lição aprendida → `contexto/lessons.md`.
+- Pessoa importante → `contexto/pessoas.md`.
+- Ainda sem dono claro → fica na `inbox/` até você decidir.
+
+## Frontmatter — o bloco de informação no topo de algumas notas
+
+Algumas notas trazem, logo no início, um bloco entre duas linhas `---` com
+informações como tipo (os mais comuns são `evento`, `tarefa`, `cliente` e
+`conhecimento`), área, tags, status, data e `relacionado:` (outras notas
+ligadas a esta). Isso ajuda a buscar e organizar depois. Uma nota que é uma
+tarefa leva também `proximo_passo:` — a única ação que destrava aquilo,
+escrita começando por um verbo (ex.: "Ligar para o fornecedor e confirmar o
+desconto"). Mas nem todo arquivo leva esse bloco:
+
+| Onde | Leva frontmatter? |
+|---|---|
+| Notas dentro de `areas/` e itens novos na `inbox/` | Sim |
+| `inbox/_index.md` e o `MAPA.md` de cada área | Não — são índice, não nota, mesmo estando dentro de `areas/`/`inbox/` |
+| `CLAUDE.md`, `README.md`, `USER.md`, `MAPA.md` da raiz | Não — são configuração, não conhecimento |
+| `contexto/decisions.md`, `contexto/lessons.md`, `contexto/pessoas.md` | Não — são texto corrido que só cresce |
+| Qualquer coisa dentro de `arquivo/` | Não — é histórico, não se mexe mais nele |
+
+## Como ligar uma nota a outra
+
+Dentro do texto, use um link normal de markdown (o jeito simples de formatar
+texto que este cérebro usa, com negrito, listas e links) — é para navegar,
+para quem está lendo clicar e ir direto. No campo `relacionado:` do
+frontmatter, use o caminho do arquivo — é para o agente achar a ligação sem
+precisar ler tudo. Não use mais o formato antigo `[[assim entre colchetes
+duplos]]`.
+
+## Pasta nova, mapa atualizado
+
+Criou uma pasta nova? Atualize o `MAPA.md` correspondente — sem isso, o GPS
+fica desatualizado e ninguém acha o que você acabou de guardar.
+
+## Privacidade
+
+Este cérebro é privado, e o `.gitignore` (a lista de exceções que decide
+o que sobe para o GitHub) só deixa subir arquivos de texto `.md` — nenhuma
+senha, chave ou planilha sobe junto. Ainda assim, evite colar número de
+cartão, senha ou documento de cliente aqui dentro. Nada impede isso na
+prática — é escolha sua.

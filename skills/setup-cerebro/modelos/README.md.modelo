@@ -1,0 +1,17 @@
+# Cérebro de {{DONO}}
+
+Este repositório — um espaço guardado no GitHub, como uma pasta do Google
+Drive, mas pensado para texto e com histórico de tudo que já foi salvo — é o
+segundo cérebro de {{DONO}}, criado em {{DATA}}.
+
+## Como usar
+
+- `/salvar` — guarda qualquer coisa na caixa de entrada (`inbox/`), rápido, de
+  qualquer lugar.
+- `/ingestao` — organiza o que está na caixa de entrada e move cada coisa
+  para o lugar certo.
+
+## Privacidade
+
+Este repositório é privado. Só {{DONO}} — e quem ele convidar — enxerga o
+conteúdo.

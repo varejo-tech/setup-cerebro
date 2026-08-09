@@ -1,0 +1,15 @@
+# Mapa do cérebro
+
+Onde procurar cada coisa, antes de sair abrindo arquivo por arquivo.
+
+| Pasta | O que tem lá | Quando abrir |
+|---|---|---|
+| `contexto/` | Decisões (`decisions.md`), lições aprendidas (`lessons.md`) e pessoas importantes (`pessoas.md`) | Quando quiser lembrar um combinado antigo ou uma pessoa |
+| `inbox/` | Tudo que chegou bruto e ainda não foi organizado | Quando for guardar algo novo, ou organizar o que está pendente |
+| `areas/` | Cada frente da sua vida ou negócio, uma pasta por área | Quando for procurar ou guardar algo de uma área específica |
+| `arquivo/` | Material antigo já organizado, guardado como histórico | Quando quiser resgatar algo do passado — nunca se apaga daqui |
+| `.claude/skills/` | Os comandos prontos do cérebro | O Claude usa sozinho; você não precisa abrir |
+
+## Áreas
+
+{{AREAS}}

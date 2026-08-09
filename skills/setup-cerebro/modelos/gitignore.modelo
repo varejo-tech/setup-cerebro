@@ -1,0 +1,6 @@
+# Fail-closed: nega tudo, libera só o que o cérebro precisa versionar.
+*
+!*/
+!*.md
+!.gitignore
+!.gitkeep
