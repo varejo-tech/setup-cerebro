@@ -54,10 +54,15 @@ sempre este.
    interprete, não arredonde, não troque "talvez" por "vai", não resuma o que a pessoa quis
    guardar por inteiro.
 
-6. **Confirme em uma frase** o que guardou e onde — por exemplo: "Guardado em
-   `inbox/<dono>/2026-08-08-1432-ideia-promocao-fim-de-semana.md`." Se o item era imagem ou
-   print, deixe explícito: "Guardei em texto o que estava no print, em
-   `inbox/<dono>/2026-08-08-1440-tabela-preco-fornecedor.md` — a imagem em si não fica salva."
+6. **Confirme em uma frase** o que guardou e onde — **dizendo junto que isso ainda está só neste
+   computador**, e que vai para o GitHub na próxima `/ingestao`. Sem essa parte, a confirmação
+   contradiz a primeira lei do cérebro (o GitHub é a fonte da verdade) e a pessoa fica achando que
+   o item já está guardado fora daqui. Por exemplo: "Guardado em
+   `inbox/<dono>/2026-08-08-1432-ideia-promocao-fim-de-semana.md` — por enquanto só aqui no seu
+   computador; vai para o GitHub na próxima vez que você rodar `/ingestao`." Se o item era imagem
+   ou print, some a isso o aviso da imagem: "Guardei em texto o que estava no print, em
+   `inbox/<dono>/2026-08-08-1440-tabela-preco-fornecedor.md` — a imagem em si não fica salva. Está
+   só aqui no computador por enquanto; sobe para o GitHub na próxima `/ingestao`."
 
 ## O que NÃO fazer
 

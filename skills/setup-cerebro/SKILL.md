@@ -23,7 +23,7 @@ Confira, nesta ordem, e **pare na primeira falha** — não siga para a etapa se
    Feito isso, enquadre em uma destas três situações:
 
    - **Nada dentro** → caminho normal. Siga.
-   - **Só entradas desta lista, e nada além delas** — `.git/`, `.claude/`, `.gitignore`, `CLAUDE.md`, `USER.md`, `MAPA.md`, `README.md`, `contexto/`, `inbox/`, `areas/`, `arquivo/` → é **retomada** de uma tentativa que não chegou ao fim. O ponto onde isso mais acontece é a hora de entrar na conta do GitHub, que depende do navegador e de uma ação da pessoa. Não mande ninguém começar do zero por causa disso: siga para o E0.1, logo abaixo.
+   - **Só entradas desta lista, e nada além delas** — `.git/`, `.claude/`, `.gitignore`, `CLAUDE.md`, `USER.md`, `MAPA.md`, `README.md`, `contexto/`, `inbox/`, `areas/`, `arquivo/` → é tudo que este próprio setup cria, e **isso quer dizer duas coisas diferentes**: pode ser uma tentativa que parou no meio (o ponto mais comum é a hora de entrar na conta do GitHub, que depende do navegador e de uma ação da pessoa), mas pode ser também um cérebro que já ficou pronto e está em uso. Pela lista de arquivos, os dois são idênticos. **Não anuncie nada ainda e não escreva nada**: siga para o E0.1, logo abaixo, que separa um caso do outro antes de qualquer outra coisa.
    - **Qualquer outra coisa** — um documento, uma planilha, uma pasta que não está nessa lista → **pare**, sem criar nada e sem fazer nenhuma pergunta. Duas respostas, conforme o caso:
 
    Se **não houver** sinal de tentativa anterior, responda em prosa exatamente isto:
@@ -48,9 +48,35 @@ Confira, nesta ordem, e **pare na primeira falha** — não siga para a etapa se
 
 3. **Sistema operacional.** Identifique se esta máquina é Windows, macOS ou Linux e guarde essa informação — etapas futuras desta skill (a instalação do Git acima, e mais adiante a instalação do `gh`) precisam se adaptar a ela, e é mais barato descobrir uma vez do que redescobrir a cada etapa.
 
-Só avance depois que os três itens acima passarem: para a entrevista (E1) no caminho normal, ou para o E0.1 na retomada.
+Só avance depois que os três itens acima passarem: para a entrevista (E1) no caminho normal, ou para o E0.1 quando a pasta tiver só aquilo que este setup cria.
 
-### E0.1 — Retomada de uma tentativa anterior
+### E0.1 — Tentativa interrompida ou cérebro já pronto?
+
+O item 2 aceitou esta pasta porque tudo que existe nela é do feitio deste setup. Só que isso descreve **duas situações bem diferentes**: um setup que morreu no meio, e um cérebro terminado, com anotações de verdade e cópia guardada no GitHub. Tratar o segundo como se fosse o primeiro é o erro caro desta skill: mais adiante você criaria um repositório novo e trocaria a ligação do cérebro para ele — nada se perde no computador, mas o cérebro se desliga em silêncio da cópia que já tinha, e ninguém percebe. **Descubra em qual dos dois você está antes de escrever, perguntar ou criar qualquer coisa.**
+
+**O sinal de cérebro pronto são estas três coisas, e só valem juntas:**
+
+- **a estrutura está completa** — existem os arquivos da raiz (`CLAUDE.md`, `USER.md`, `MAPA.md`) e as pastas `contexto/`, `inbox/`, `areas/` e `arquivo/`;
+- **a pasta já está ligada a um repositório remoto** — é um repositório git com um endereço de origem configurado, para onde ele envia;
+- **o histórico tem mais de um registro** — alguma coisa foi salva depois do commit inicial que o próprio setup faz.
+
+Faltando qualquer uma das três, é tentativa interrompida: siga para a recuperação, logo abaixo.
+
+**Com as três juntas, não diga que achou uma tentativa anterior e não continue sozinho** — a frase seria falsa, e seguir adiante é o que quebra o cérebro dela. Fale em prosa, sem jargão, mais ou menos assim:
+
+> Nesta pasta já tem um cérebro montado e funcionando — com as suas anotações e com cópia
+> guardada no GitHub. Não parece ter sobrado nada para eu montar aqui, e eu não vou mexer no
+> que já está pronto.
+> Me diga o que você prefere: continuar usando esse cérebro do jeito que ele está, ou montar um
+> cérebro novo, do zero, numa outra pasta vazia.
+
+**Espere a resposta de verdade. Não decida por ela.**
+
+- **Continuar com o que existe** → o setup não tem o que fazer. Diga em uma linha que está tudo no lugar e **encerre aqui**: não crie repositório, não troque nenhuma ligação, não avance para nenhuma etapa.
+- **Montar um cérebro novo** → explique que ele nasce em uma pasta nova e vazia, que ela precisa criar essa pasta e abrir o Claude Code lá dentro, e **encerre aqui também** — este cérebro fica intocado.
+- **Se ela responder outra coisa** — por exemplo, que aquele setup parou no meio e ela quer terminá-lo, ou que aquilo ali não é dela — trate como tentativa interrompida e siga para a recuperação abaixo.
+
+#### Recuperação de uma tentativa interrompida
 
 Uma tentativa que parou no meio já respondeu as perguntas da entrevista, e refazê-las é o motivo pelo qual as pessoas desistem na segunda vez. **Não repita a entrevista: recupere as respostas do que já está escrito na pasta.**
 
@@ -129,7 +155,7 @@ Além desses arquivos, garanta que existam:
 
 Este é um **gate**, não um relatório: enquanto sobrar algo, você não segue nem comenta com a pessoa.
 
-Antes de seguir, confira se sobrou algum marcador no formato `{{ALGUMA_COISA}}` em qualquer arquivo que você acabou de criar. Use a ferramenta de busca que preferir nesta máquina.
+Antes de seguir, confira se sobrou algum marcador no formato `{{ALGUMA_COISA}}` **na pasta inteira do cérebro** — não só no que você acabou de escrever. Numa retomada você pode não ter criado nenhum arquivo novo, e é justamente ali que mora o risco: um marcador cru deixado pela tentativa anterior passaria batido e acabaria publicado. Varra todos os arquivos de texto da pasta, inclusive os que já estavam lá antes de você chegar; o miolo do `.git/` não conta, é o histórico do git, não conteúdo do cérebro. Use a ferramenta de busca que preferir nesta máquina.
 
 Se encontrar algum, corrija o arquivo e confira de novo. **Não avance nem comente com a pessoa enquanto sobrar um.** Só siga quando a busca vier vazia.
 
@@ -158,6 +184,14 @@ Transforme a pasta em um repositório git com a branch principal chamada `main`,
 Se a pasta já for um repositório git — sinal de uma tentativa anterior que não chegou ao fim —, não recomece do zero: confira o que já está feito (a branch, o que já foi adicionado ou commitado) e continue dali, sem duplicar o que já aconteceu.
 
 ### E4.4 — Criar o repositório privado e publicar
+
+**Antes de propor nome nenhum, veja se esta pasta já está ligada a um repositório no GitHub** — se o repositório git daqui já tem um endereço de origem configurado. Numa retomada isso é comum: a tentativa anterior pode ter chegado até aqui. Se já houver essa ligação:
+
+- **não crie outro repositório e não troque a ligação existente**, por nada. Apontar o cérebro para um repositório novo o desliga em silêncio da cópia que ele já tinha: nada se perde no computador, mas tudo que for salvo dali em diante vai para o lugar errado, e ninguém percebe — inclusive a conferência de privacidade lá embaixo estaria conferindo o repositório errado.
+- Leia para onde a ligação aponta e **confirme com a pessoa, em uma linha, que é o repositório dela mesma**, mostrando o endereço. Com o sim dela, envie o que ainda não tiver subido e siga direto para a conferência de privacidade no fim desta etapa — é esse o repositório a conferir.
+- Se alguma coisa estiver diferente do esperado — ela não reconhece o endereço, o repositório não existe mais, você não consegue acessá-lo, ou ele é de outra conta — **pare e explique o que encontrou**, em linguagem simples, e pergunte o que ela quer fazer. Não improvise um repositório novo para contornar.
+
+Só quando **não houver** repositório ligado é que você cria um do zero, daqui em diante.
 
 Proponha à pessoa o nome do repositório: o **slug do dono que você já calculou no E2** — o mesmo usado em `inbox/<slug-do-dono>/` — seguido de `-cerebro`. Nunca use o nome literal da pergunta 1 para isso: ele pode ter espaço e acento, e o GitHub não aceita isso em nome de repositório. Essa proposta é confirmada com a pessoa em uma linha — não é uma quarta pergunta da entrevista, é a confirmação de um valor que você já derivou.
 
@@ -192,6 +226,16 @@ indicado abaixo.
    acabou de criar. É global porque captura tem que funcionar de onde a pessoa estiver, não só de
    dentro do cérebro.
 
+   **Antes de escrever nesse caminho, olhe se já existe uma `/salvar` instalada ali** e, se
+   existir, leia qual caminho de cérebro ela carrega. Se for **outro** cérebro — não este que você
+   acabou de montar —, **não sobrescreva**: essa máquina já captura para outro lugar, e trocar
+   isso caladamente faria toda captura futura cair no cérebro errado, sem nenhum aviso. Diga para
+   qual cérebro ela aponta hoje, para qual passaria a apontar, e pergunte o que a pessoa prefere.
+   Só troque com o sim dela; se ela preferir manter o que tem, mantenha, siga para o item 2 e
+   avise em uma linha que a captura continua indo para o cérebro antigo — e que, para guardar
+   neste aqui, ela vai precisar dizer isso na hora de salvar. Se a `/salvar` que está lá já aponta
+   para este mesmo cérebro, é a mesma instalação: pode sobrescrever sem perguntar.
+
 2. **`/ingestao` e `/perfil` são do cérebro.** Copie `skills-do-cerebro/ingestao/SKILL.md` e
    `skills-do-cerebro/perfil/SKILL.md`, sem alterar nada, para
    `<cerebro>/.claude/skills/ingestao/SKILL.md` e `<cerebro>/.claude/skills/perfil/SKILL.md` —
@@ -200,15 +244,26 @@ indicado abaixo.
    repositório: quando a pessoa clonar em outra máquina, já chegam prontas, sem precisar reinstalar
    nada.
 
+   **Se alguma das duas já existir no destino, não copie por cima sem olhar** — numa retomada, ou
+   num cérebro que já rodava, o arquivo que está lá pode ter sido editado pela pessoa, e a cópia
+   silenciosa apagaria o que ela escreveu e ainda mandaria isso para o GitHub no passo seguinte.
+   Compare o que está lá com o que você traz. Iguais, não há nada a fazer. Diferentes, **não
+   sobrescreva calado**: diga em uma ou duas frases o que muda e pergunte se ela quer a versão
+   nova. Só substitua com o sim dela; se ela preferir ficar com a versão dela, mantenha e siga.
+
 **Verificação, antes de seguir para o E6:** o `{{CEREBRO_PATH}}` que você acabou de preencher é o
 único marcador de toda a skill que sobrevive ao gate do E3 — ele nem existia até agora. Confira,
-nas três skills que você acabou de instalar (a global e as duas dentro do cérebro), se sobrou
-algum marcador no formato `{{ALGUMA_COISA}}` em qualquer uma delas. Se encontrar algum, corrija e
+nas três skills que agora estão nos destinos (a global e as duas dentro do cérebro), tenha você
+acabado de escrevê-las ou mantido a versão que já estava lá, se sobrou algum marcador no formato
+`{{ALGUMA_COISA}}` em qualquer uma delas. Se encontrar algum, corrija e
 confira de novo. Só siga para o E6 quando a busca vier vazia.
 
 Com a verificação limpa, registre `/ingestao` e `/perfil` no controle de versão do cérebro, num
 registro próprio, e **envie ao repositório** (a `/salvar`, por ser global, fica de fora — ela não
-mora dentro do repositório). Não deixe essas duas skills penduradas até o E6: se a sessão parar
+mora dentro do repositório). Se as duas já estavam lá e nada mudou — porque eram idênticas, ou
+porque a pessoa preferiu manter a versão dela —, não há o que registrar: siga direto para o E6.
+
+Não deixe essas duas skills penduradas até o E6: se a sessão parar
 entre agora e o OK que o E6 pede, elas ficam presas só nesta máquina, sem nenhum sinal de que
 falta enviá-las — e quem clonar o cérebro em outra máquina não as recebe.
 
