@@ -2,5 +2,6 @@
 
 - [O estado atual desta área](contexto/geral.md)
 
-As pastas `projetos/`, `tarefas/` e `clientes/` ainda não existem — elas
-nascem sozinhas quando o primeiro item de cada tipo chegar.
+As pastas `projetos/`, `tarefas/` e `clientes/` nascem sozinhas quando o
+primeiro item de cada tipo chegar — e aparecem aqui no mapa quando nascerem.
+Enquanto não estiverem listadas acima, é porque ainda não chegou nada delas.

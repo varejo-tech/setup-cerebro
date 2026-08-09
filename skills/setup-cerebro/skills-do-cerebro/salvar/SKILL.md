@@ -16,8 +16,11 @@ sempre este.
 
 1. **Ache a caixa de entrada pessoal.** Dentro de `{{CEREBRO_PATH}}/inbox/` existe uma subpasta
    com o nome do dono do cérebro — foi criada no setup. É ali que o item vai, nunca solto na
-   raiz de `inbox/` nem dentro de `areas/`. Se houver mais de uma subpasta candidata e não for
-   óbvio qual usar, pergunte antes de gravar.
+   raiz de `inbox/` nem dentro de `areas/`. Dois casos fora do comum:
+   - **Mais de uma subpasta candidata**, sem ser óbvio qual usar → pergunte antes de gravar.
+   - **Nenhuma subpasta lá dentro** → crie uma com o nome do dono do cérebro (minúsculo, sem
+     acento, sem espaço) e siga normalmente, avisando em uma linha que criou a caixa de entrada
+     pessoal. Não trave por causa disso, e não grave solto na raiz de `inbox/`.
 
 2. **Monte o nome do arquivo.** Formato: `AAAA-MM-DD-HHMM-<slug>.md` — a data e a hora de agora,
    seguidas de um slug curto (minúsculo, sem acento, palavras separadas por hífen) que resuma o
@@ -41,9 +44,11 @@ sempre este.
 4. **Se o que a pessoa mandou for uma imagem ou um print**, transcreva em texto tudo que estiver
    visível e for relevante — preservando número, nome e data exatamente como aparecem na imagem —
    e grave essa transcrição como o conteúdo do arquivo. A imagem em si **não é gravada**: o
-   `.gitignore` deste cérebro só deixa `.md` subir para o GitHub, e é lá que mora a fonte da
-   verdade — uma imagem parada só na máquina local quebra essa lei. Avise disso na confirmação
-   (passo 6): diga que guardou o conteúdo em texto e que a imagem não fica salva no cérebro.
+   `.gitignore` deste cérebro só deixa `.md` subir para o GitHub, então uma imagem guardada aqui
+   nunca chegaria lá — ficaria só nesta máquina, parecendo salva sem estar. O texto, sim, sobe:
+   na próxima vez que a pessoa rodar a `/ingestao`, é ela que leva tudo para o GitHub. Avise disso
+   na confirmação (passo 6): diga que guardou o conteúdo em texto e que a imagem não fica salva no
+   cérebro.
 
 5. **Preserve o literal.** Número, valor, nome próprio e data entram tal como foram ditos — não
    interprete, não arredonde, não troque "talvez" por "vai", não resuma o que a pessoa quis

@@ -14,6 +14,11 @@ uma pergunta de cada vez, e só grava depois de te mostrar o texto.
 Leia o `USER.md` e o `contexto/pessoas.md` de agora — para não perguntar de novo o que já está
 registrado, e para saber o que já existe antes de propor qualquer mudança.
 
+Confira também se o `CLAUDE.md` da raiz continua trazendo a linha `@USER.md`. É ela que faz o
+`USER.md` entrar em toda conversa; sem ela, tudo que esta skill escrever ali fica guardado no
+arquivo mas nunca chega ao agente. Se a linha tiver sumido, avise em uma frase e proponha
+recolocá-la antes de seguir.
+
 ## As perguntas — uma de cada vez, no máximo seis
 
 Faça as quatro perguntas abaixo, sempre uma por vez, esperando a resposta antes de fazer a

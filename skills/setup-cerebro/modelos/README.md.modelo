@@ -7,9 +7,13 @@ segundo cérebro de {{DONO}}, criado em {{DATA}}.
 ## Como usar
 
 - `/salvar` — guarda qualquer coisa na caixa de entrada (`inbox/`), rápido, de
-  qualquer lugar.
-- `/ingestao` — organiza o que está na caixa de entrada e move cada coisa
-  para o lugar certo.
+  qualquer pasta do computador.
+- `/ingestao` — organiza o que está na caixa de entrada, move cada coisa para o
+  lugar certo e manda tudo para o GitHub.
+- `/perfil` — melhora o que o cérebro sabe sobre {{DONO}}, para o agente
+  trabalhar melhor com ele.
+
+As duas últimas rodam com o Claude Code aberto dentro desta pasta.
 
 ## Privacidade
 

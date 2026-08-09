@@ -1,13 +1,13 @@
 ---
 name: ingestao
-description: Lê tudo que está parado na inbox do cérebro, mostra um resumo do que entendeu e, depois do seu OK, organiza cada coisa no lugar certo. Use quando a pessoa disser "organiza minha inbox", "processa o que eu salvei", "esvazia a inbox", ou quiser trazer notas antigas para o cérebro. NÃO use para gravar algo novo (isso é /salvar).
+description: Lê tudo que está parado na inbox do cérebro, mostra um resumo do que entendeu e, depois do seu OK, organiza cada coisa no lugar certo e manda para o GitHub. Use quando a pessoa disser "organiza minha inbox", "processa o que eu salvei", "esvazia a inbox", ou quiser trazer notas antigas para o cérebro. NÃO use para gravar algo novo (isso é /salvar).
 ---
 
 # /ingestao
 
 Esvazia a caixa de entrada de verdade: lê o lote inteiro, resume em prosa o que entendeu, espera
-o OK e só então grava cada item no lugar certo. Quatro fases, nesta ordem — nenhuma pula a
-anterior.
+o OK, grava cada item no lugar certo e manda tudo para o GitHub. Cinco fases, nesta ordem —
+nenhuma pula a anterior.
 
 ## Fase 1 — Ler o lote inteiro
 
@@ -156,8 +156,10 @@ pessoa ou empresa de fora com **nome próprio** — razão social, nome fantasia
   Toda nota com `tipo: tarefa` leva também `proximo_passo` — a frase com verbo que o teste do
   passo 1 da precedência produziu.
 - **Nunca ponha frontmatter em índice ou configuração — sem exceção**, mesmo que o conteúdo do
-  item pareça pedir isso: `MAPA.md`, `_index.md`, `CLAUDE.md`, `README.md`, `USER.md`, e o
-  quarteto `contexto/decisions.md`, `contexto/lessons.md`, `contexto/pessoas.md`. Quando o
+  item pareça pedir isso: `MAPA.md`, `_index.md`, `CLAUDE.md`, `README.md`, `USER.md`, o
+  quarteto `contexto/decisions.md`, `contexto/lessons.md`, `contexto/pessoas.md` — e também o
+  `contexto/geral.md` de cada área: ele mora dentro de `areas/`, mas é texto corrido que só
+  cresce, igual aos da raiz, e por isso nunca leva cabeçalho. Quando o
   destino de um item for um desses arquivos — uma decisão, uma lição, uma pessoa —, ele vira um
   bloco de texto **acrescentado** ao arquivo, no formato que ele já usa (veja o topo de cada um
   para o modelo do bloco); nunca um arquivo novo com cabeçalho próprio.
@@ -174,8 +176,10 @@ pessoa ou empresa de fora com **nome próprio** — razão social, nome fantasia
 ## Fase 4 — Drenar
 
 - Depois de gravar a nota no acervo, mova o arquivo bruto correspondente para `arquivo/`, com a
-  data de hoje incorporada ao nome, para não colidir com outro arquivo do mesmo nome ali dentro.
-  Se mesmo assim o nome já existir em `arquivo/`, acrescente um sufixo numérico — o mesmo recurso
+  data incorporada ao nome, para não colidir com outro arquivo do mesmo nome ali dentro. Se o
+  nome já começar com a data — é o caso de tudo que a `/salvar` gera —, ele já cumpre isso:
+  **não carimbe a data de novo**. Se mesmo assim o nome já existir em `arquivo/`, acrescente um
+  sufixo numérico — o mesmo recurso
   que o `/salvar` já usa quando duas capturas do mesmo dia colidem. Mencione na nota nova, em uma
   linha, onde o bruto foi parar — assim dá para rastrear a origem depois.
 - Item que ficou na `inbox/` por falta de dono claro **não é movido** — continua exatamente onde
@@ -185,15 +189,47 @@ pessoa ou empresa de fora com **nome próprio** — razão social, nome fantasia
   o `MAPA.md` daquele nível para apontar para ela — sem isso o mapa fica desatualizado e ninguém
   acha o que acabou de ser guardado.
 
+## Fase 5 — Registrar e enviar
+
+A primeira lei deste cérebro é que o **GitHub é a fonte da verdade**. Uma nota que existe só no
+disco desta máquina ainda não está guardada: some com o computador, não aparece em outro
+aparelho, e o repositório congela no dia em que o cérebro foi criado. É esta skill que fecha esse
+ciclo — a `/salvar` só deposita na caixa de entrada, e ninguém mais faz isso depois.
+
+Por isso, **depois de tudo gravado e drenado**, e sem perguntar nada à pessoa (ela já deu o OK do
+conteúdo na Fase 2 — este passo é consequência daquele, não uma decisão nova):
+
+1. Registre no controle de versão do cérebro **tudo que mudou nesta ingestão** — as notas novas,
+   as pastas e arquivos de entidade criados, os `MAPA.md` atualizados e os brutos que foram para
+   `arquivo/`. A descrição do registro diz, em uma linha e em português, o que entrou (por
+   exemplo: "ingestao: 3 itens — fornecedor Rio Doce, reclamação do caixa 3, reforma do
+   estacionamento").
+2. Envie esse registro ao repositório do cérebro no GitHub.
+3. Confirme em uma linha, junto do resumo final, que o que foi gravado já está no GitHub.
+
+**Se o envio não funcionar** — sem internet, acesso à conta expirado, qualquer outro motivo —
+**não desfaça nada e não repita a gravação**: o trabalho está salvo no computador e não se perde.
+Diga à pessoa, sem jargão, o que aconteceu e o que ficou pendente. Algo como: *"Organizei tudo e
+salvei aqui no seu computador, mas não consegui mandar para o GitHub agora — [o motivo, em
+linguagem simples]. Está tudo guardado; quando você quiser, é só me pedir para enviar de novo."*
+Se der para identificar a causa provável (internet caída, precisa entrar na conta do GitHub de
+novo), diga qual é e o que ela pode fazer a respeito — em uma frase, sem passo a passo técnico.
+
+Se este cérebro nem tiver um repositório no GitHub ligado a ele — coisa que o setup deixa pronta,
+mas que pode não existir num cérebro montado à mão —, registre mesmo assim no controle de versão
+local e avise, em uma linha, que falta ligar o cérebro ao GitHub para que ele saia desta máquina.
+
 ## O que NÃO fazer
 
 - Não grave nada antes do OK da Fase 2 — nem os itens "óbvios".
-- Não mova um item para a pasta de um cliente só porque ele cita o nome dele — as duas decisões
+- Não termine a ingestão sem tentar enviar ao GitHub (Fase 5) — e não esconda a falha, se ela
+  acontecer.
+- Não mova uma tarefa para a pasta de um cliente só porque ela cita o nome dele — as duas decisões
   da Fase 3 são independentes, e a pasta do item sai só da Decisão 1.
 - Não crie uma segunda pasta para uma entidade que já tem a sua, nem com o nome escrito de outro
   jeito.
-- Não ponha frontmatter em `MAPA.md`, `_index.md`, `CLAUDE.md`, `README.md`, `USER.md` ou em
-  qualquer arquivo do quarteto de `contexto/`.
+- Não ponha frontmatter em `MAPA.md`, `_index.md`, `CLAUDE.md`, `README.md`, `USER.md`, em
+  qualquer arquivo do quarteto de `contexto/` na raiz, nem no `contexto/geral.md` de uma área.
 - Não decida um destino forçado para item sem dono claro — deixe-o na inbox e diga isso no
   resumo da Fase 2.
 - Não use esta skill para gravar algo novo que a pessoa acabou de dizer agora — isso é

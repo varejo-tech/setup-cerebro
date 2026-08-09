@@ -55,11 +55,17 @@ Claude Code. É normal, faz parte do processo.
 ## Como usar depois
 
 - **`/salvar`** — guarda qualquer coisa no cérebro em segundos: uma ideia,
-  um recado, um print. Funciona de qualquer pasta do seu computador.
-- **`/ingestao`** — organiza o que se acumulou na caixa de entrada, e só
-  grava depois do seu OK.
+  um recado, um print. Funciona de qualquer pasta do seu computador. Se você
+  mandar um print, ele guarda **em texto** o que estava escrito na imagem —
+  a imagem em si não fica salva.
+- **`/ingestao`** — organiza o que se acumulou na caixa de entrada, só grava
+  depois do seu OK, e ao final manda tudo para o GitHub.
 - **`/perfil`** — aprofunda o que o cérebro sabe sobre você, para o agente
   trabalhar melhor com você.
+
+**`/ingestao` e `/perfil` só funcionam com o Claude Code aberto dentro da
+pasta do seu cérebro** — é lá que estão as suas notas. A `/salvar` é a
+exceção: essa funciona de qualquer pasta.
 
 ## Já tenho notas antigas — e agora?
 

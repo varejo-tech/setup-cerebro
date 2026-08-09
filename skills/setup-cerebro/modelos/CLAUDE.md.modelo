@@ -4,6 +4,9 @@ Este arquivo é o primeiro que se lê. Ele explica as regras deste cérebro — 
 repositório de notas guardado no GitHub (um site que guarda versões do que
 você salva, como um "Google Drive" pensado para texto).
 
+Quem é o dono deste cérebro, e como falar e trabalhar com ele, está em
+@USER.md — que entra junto com este arquivo, em toda conversa.
+
 **Quatro leis, antes de tudo:**
 
 - **O GitHub é a fonte da verdade.** O que está salvo lá é o que vale — não o
@@ -26,7 +29,7 @@ arquivo específico.
 | Onde | O que é |
 |---|---|
 | `CLAUDE.md` | Este arquivo — as regras do cérebro. |
-| `USER.md` | Quem é você e como prefere que o agente fale com você. Carregado sempre. |
+| `USER.md` | Quem é você e como prefere que o agente fale com você. Entra em toda conversa, junto com este arquivo (é o `@USER.md` logo acima que faz isso). |
 | `MAPA.md` | O mapa da casa, para achar rápido onde cada coisa está. |
 | `README.md` | Explica o que é este cérebro. |
 | `.gitignore` | Configuração técnica: decide o que sobe para o GitHub e o que fica só na sua máquina. |
@@ -57,7 +60,35 @@ buraco?"**
 - Decisão que atravessa mais de uma área → `contexto/decisions.md`.
 - Lição aprendida → `contexto/lessons.md`.
 - Pessoa importante → `contexto/pessoas.md`.
-- Ainda sem dono claro → fica na `inbox/` até você decidir.
+- Ainda sem dono claro → fica na `inbox/` até você decidir. Não force um
+  destino só para não deixar nada pendente.
+
+### Dentro de uma área, em qual gaveta
+
+Escolhida a área, a nota ainda precisa de uma gaveta. Percorra as quatro
+perguntas abaixo **nesta ordem e pare na primeira que servir**, mesmo que a
+seguinte também pareça caber:
+
+1. **Sobrou alguma coisa para você fazer?** Se dá para escrever, começando por
+   um verbo, o que você ainda precisa fazer ("Ligar para o fornecedor e
+   confirmar o desconto"), é tarefa → `areas/<área>/tarefas/`. Um problema sem
+   solução, uma reclamação sem resposta e um prazo se aproximando também contam
+   como coisa a fazer, mesmo que ninguém tenha escrito o verbo.
+2. **Não sobrou nada a fazer, mas é sobre uma pessoa ou empresa de fora, com
+   nome próprio?** → `areas/<área>/clientes/<nome>/`. Só vale nome de verdade
+   ("Distribuidora Rio Doce"); "aquele fornecedor de bebidas" não é nome.
+3. **Nem uma coisa nem outra, mas é o andamento de uma frente que continua ao
+   longo do tempo?** → `areas/<área>/projetos/`. Só se essa frente já existir
+   ali, ou se o próprio material se apresentar como continuação de algo.
+4. **Nenhum dos três** → solto dentro de `areas/<área>/`.
+
+**Na dúvida, é tarefa.** Uma tarefa que não era tarefa aparece na lista e você
+descarta em dois segundos; um registro que era tarefa some, e você só descobre
+quando o prazo já passou.
+
+Essas gavetas não existem desde o começo — cada uma nasce quando o primeiro
+item dela chega. Quem organiza a caixa de entrada é a `/ingestao`, que segue
+exatamente esta mesma ordem, com mais detalhe.
 
 ## Frontmatter — o bloco de informação no topo de algumas notas
 
@@ -73,6 +104,7 @@ desconto"). Mas nem todo arquivo leva esse bloco:
 |---|---|
 | Notas dentro de `areas/` e itens novos na `inbox/` | Sim |
 | `inbox/_index.md` e o `MAPA.md` de cada área | Não — são índice, não nota, mesmo estando dentro de `areas/`/`inbox/` |
+| `contexto/geral.md` de cada área | Não — é texto corrido que só cresce, igual ao `contexto/` da raiz, mesmo estando dentro de `areas/` |
 | `CLAUDE.md`, `README.md`, `USER.md`, `MAPA.md` da raiz | Não — são configuração, não conhecimento |
 | `contexto/decisions.md`, `contexto/lessons.md`, `contexto/pessoas.md` | Não — são texto corrido que só cresce |
 | Qualquer coisa dentro de `arquivo/` | Não — é histórico, não se mexe mais nele |
