@@ -16,7 +16,19 @@ dentro, na hora que você precisar.
 
 ## Como instalar
 
-Abra o Claude Code dentro dessa pasta nova e vazia, e cole o texto abaixo:
+**1. Crie a pasta e abra o Claude Code dentro dela.**
+
+- No Mac: crie a pasta pelo Finder, clique nela com o botão direito e
+  procure "Novo Terminal na Pasta" (ou abra o Terminal e navegue até lá).
+  Depois digite `claude` e aperte Enter.
+- No Windows: crie a pasta pelo Explorador de Arquivos, clique com o botão
+  direito **dentro** dela e escolha "Abrir no Terminal" (ou "Git Bash
+  aqui"). Depois digite `claude` e aperte Enter.
+
+Se travar nesse passo, é normal — peça ajuda a alguém que manje um pouco de
+computador em vez de desistir sozinho.
+
+**2. Cole o texto abaixo** na conversa que abriu:
 
 ```
 Instale a skill de setup do segundo cérebro a partir de
@@ -26,9 +38,14 @@ numa pasta temporária, copie skills/setup-cerebro para
 /setup-cerebro.
 ```
 
-Quando o agente confirmar, rode `/setup-cerebro`. Ele faz três perguntas
-rápidas e monta tudo sozinho — a estrutura do cérebro, o repositório privado
-no GitHub, os comandos do dia a dia — em cerca de 15 minutos.
+**3.** Quando o agente confirmar, rode `/setup-cerebro`. Ele faz três
+perguntas rápidas e monta tudo sozinho: a estrutura do cérebro, o
+repositório privado no GitHub (um espaço só seu, guardado lá, com
+histórico de tudo que for salvo) e os comandos do dia a dia.
+
+**Quanto tempo leva:** cerca de 15 minutos, se você já tem o Git e a conta
+no GitHub prontos. Se não tiver, sem problema — o próprio setup instala o
+que falta e te orienta na hora, só que leva mais tempo.
 
 **Um aviso sobre o GitHub:** em algum ponto do processo vai aparecer um
 código na tela e o navegador vai abrir sozinho. É o `gh auth login` pedindo
