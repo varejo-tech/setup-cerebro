@@ -23,7 +23,7 @@ Confira, nesta ordem, e **pare na primeira falha** — não siga para a etapa se
    Feito isso, enquadre em uma destas três situações:
 
    - **Nada dentro** → caminho normal. Siga.
-   - **Só entradas desta lista, e nada além delas** — `.git/`, `.claude/`, `.gitignore`, `CLAUDE.md`, `USER.md`, `MAPA.md`, `README.md`, `contexto/`, `inbox/`, `areas/`, `arquivo/` → é tudo que este próprio setup cria, e **isso quer dizer duas coisas diferentes**: pode ser uma tentativa que parou no meio (o ponto mais comum é a hora de entrar na conta do GitHub, que depende do navegador e de uma ação da pessoa), mas pode ser também um cérebro que já ficou pronto e está em uso. Pela lista de arquivos, os dois são idênticos. **Não anuncie nada ainda e não escreva nada**: siga para o E0.1, logo abaixo, que separa um caso do outro antes de qualquer outra coisa.
+   - **Só entradas desta lista, e nada além delas** — `.git/`, `.claude/`, `.gitignore`, `CLAUDE.md`, `USER.md`, `MAPA.md`, `log.md`, `README.md`, `contexto/`, `inbox/`, `areas/`, `arquivo/` → é tudo que este próprio setup cria, e **isso quer dizer duas coisas diferentes**: pode ser uma tentativa que parou no meio (o ponto mais comum é a hora de entrar na conta do GitHub, que depende do navegador e de uma ação da pessoa), mas pode ser também um cérebro que já ficou pronto e está em uso. Pela lista de arquivos, os dois são idênticos. **Não anuncie nada ainda e não escreva nada**: siga para o E0.1, logo abaixo, que separa um caso do outro antes de qualquer outra coisa.
    - **Qualquer outra coisa** — um documento, uma planilha, uma pasta que não está nessa lista → **pare**, sem criar nada e sem fazer nenhuma pergunta. Duas respostas, conforme o caso:
 
    Se **não houver** sinal de tentativa anterior, responda em prosa exatamente isto:
@@ -56,7 +56,7 @@ O item 2 aceitou esta pasta porque tudo que existe nela é do feitio deste setup
 
 **O sinal de cérebro pronto são estas três coisas, e só valem juntas:**
 
-- **a estrutura está completa** — existem os arquivos da raiz (`CLAUDE.md`, `USER.md`, `MAPA.md`) e as pastas `contexto/`, `inbox/`, `areas/` e `arquivo/`;
+- **a estrutura está completa** — existem os arquivos da raiz (`CLAUDE.md`, `USER.md`, `MAPA.md`) e as pastas `contexto/`, `inbox/`, `areas/` e `arquivo/`. **Não exija o `log.md` aqui**: cérebros montados antes de ele existir não têm o arquivo, e cobrar isso faria um cérebro pronto e em uso ser confundido com uma tentativa interrompida — que é justamente o erro caro desta etapa;
 - **a pasta já está ligada a um repositório remoto** — é um repositório git com um endereço de origem configurado, para onde ele envia;
 - **o histórico tem mais de um registro** — alguma coisa foi salva depois do commit inicial que o próprio setup faz.
 
@@ -117,6 +117,7 @@ Os modelos vêm junto desta skill, na subpasta `modelos/` (sufixo `.modelo` em c
 - `{{RESPOSTA_PERGUNTA_2}}` → a resposta da pergunta 2, literal, sem resumir nem reescrever.
 - `{{TRATAMENTO}}` → a resposta da pergunta 3.
 - `{{DATA}}` → a data de hoje, no formato `DD/MM/AAAA`.
+- `{{DATA_ISO}}` → a data de hoje no formato `AAAA-MM-DD` (ex.: `2026-08-13`). É a mesma data do marcador acima, escrita de outro jeito: no `log.md` a data vem primeiro para as entradas ficarem em ordem sozinhas. Aparece só nesse arquivo.
 - `{{AREA_NOME}}` → o nome de exibição de uma área específica, o que está guardado em `AREAS_NOMES` para aquela área — **nunca** o slug capitalizado: se a pessoa chamou a área de "Família", o nome de exibição leva o acento (`Família`), mesmo que a pasta dela (`areas/familia/`) não leve. Usado uma vez por área, nos dois modelos de área.
 - `{{AREAS}}` → aparece em dois arquivos, com formato diferente em cada um, mas sempre usando o nome de exibição de `AREAS_NOMES`, nunca o slug:
   - em `CLAUDE.md`: os nomes de exibição de todas as áreas, em prosa, separados por vírgula e com "e" antes do último (ex.: "Loja, Família e Financeiro");
@@ -129,6 +130,7 @@ Arquivos únicos (uma cópia cada):
 | `CLAUDE.md.modelo` | `CLAUDE.md` |
 | `USER.md.modelo` | `USER.md` |
 | `MAPA.md.modelo` | `MAPA.md` |
+| `log.md.modelo` | `log.md` |
 | `README.md.modelo` | `README.md` |
 | `gitignore.modelo` | `.gitignore` |
 | `inbox-index.md.modelo` | `inbox/_index.md` |

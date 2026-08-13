@@ -24,6 +24,18 @@ Nunca saia caçando arquivo à toa. A ordem certa é: primeiro este `CLAUDE.md`,
 depois o `MAPA.md` da raiz, depois o `MAPA.md` da área certa — e só então o
 arquivo específico.
 
+**Só que tem uma pergunta que o mapa não responde: "quando?".** O `MAPA.md`
+sabe onde cada assunto mora, e não sabe o que aconteceu na semana passada.
+Para isso existe o `log.md`, na raiz: uma linha por vez que a `/ingestao`
+rodou, com a data na frente. Pergunta de tempo — "o que entrou essa semana?",
+"quando foi que esse assunto apareceu?" — começa por lá, e é mais rápido que
+o mapa.
+
+Vale saber por que os dois precisam existir: a data escrita numa nota é a data
+**do fato**, não a data em que o assunto voltou. Uma conversa de hoje pode
+acabar dentro de uma nota criada há três semanas, e aí procurar pela data de
+hoje não acha nada. O `log.md` acha.
+
 ## O que tem aqui dentro
 
 | Onde | O que é |
@@ -31,6 +43,7 @@ arquivo específico.
 | `CLAUDE.md` | Este arquivo — as regras do cérebro. |
 | `USER.md` | Quem é você e como prefere que o agente fale com você. Entra em toda conversa, junto com este arquivo (é o `@USER.md` logo acima que faz isso). |
 | `MAPA.md` | O mapa da casa, para achar rápido onde cada coisa está. |
+| `log.md` | O diário do cérebro: o que entrou e quando, uma linha por vez que a `/ingestao` rodou. É onde se procura por data. |
 | `README.md` | Explica o que é este cérebro. |
 | `.gitignore` | Configuração técnica: decide o que sobe para o GitHub e o que fica só na sua máquina. |
 | `.claude/skills/` | Os comandos prontos do cérebro, como `/salvar` e `/ingestao`. |
@@ -105,7 +118,7 @@ desconto"). Mas nem todo arquivo leva esse bloco:
 | Notas dentro de `areas/` e itens novos na `inbox/` | Sim |
 | `inbox/_index.md` e o `MAPA.md` de cada área | Não — são índice, não nota, mesmo estando dentro de `areas/`/`inbox/` |
 | `contexto/geral.md` de cada área | Não — é texto corrido que só cresce, igual ao `contexto/` da raiz, mesmo estando dentro de `areas/` |
-| `CLAUDE.md`, `README.md`, `USER.md`, `MAPA.md` da raiz | Não — são configuração, não conhecimento |
+| `CLAUDE.md`, `README.md`, `USER.md`, `MAPA.md`, `log.md` da raiz | Não — são configuração ou registro, não conhecimento |
 | `contexto/decisions.md`, `contexto/lessons.md`, `contexto/pessoas.md` | Não — são texto corrido que só cresce |
 | Qualquer coisa dentro de `arquivo/` | Não — é histórico, não se mexe mais nele |
 

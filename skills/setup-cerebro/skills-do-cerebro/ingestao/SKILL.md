@@ -163,6 +163,13 @@ pessoa ou empresa de fora com **nome próprio** — razão social, nome fantasia
   destino de um item for um desses arquivos — uma decisão, uma lição, uma pessoa —, ele vira um
   bloco de texto **acrescentado** ao arquivo, no formato que ele já usa (veja o topo de cada um
   para o modelo do bloco); nunca um arquivo novo com cabeçalho próprio.
+- **Decisão nova que derruba uma antiga: volte e marque a antiga.** É a única vez em que se mexe
+  em texto já escrito no `contexto/decisions.md`, e só na linha do status dela. Antes de
+  acrescentar uma decisão, leia as que já estão ali: se a nova desfaz alguma, troque o status da
+  antiga por `⛔ REVOGADA em DD/MM por [a decisão nova]`, seguido de uma frase dizendo o que vale
+  hoje. **Não apague nem reescreva o resto do bloco dela.** Sem isso a decisão velha continua
+  dizendo "ativa" para sempre, e quem ler primeiro vai seguir a regra errada — ninguém lê o
+  arquivo inteiro antes de agir. O formato completo está no topo do próprio `decisions.md`.
 - **Item vindo de transcrição de reunião ou conversa não vira tarefa de alguém automaticamente.**
   Ferramentas de transcrição atribuem responsável sozinhas, e erram. Registre como "ponto
   levantado" dentro da nota, em prosa — nunca como compromisso assumido.
@@ -199,13 +206,33 @@ ciclo — a `/salvar` só deposita na caixa de entrada, e ninguém mais faz isso
 Por isso, **depois de tudo gravado e drenado**, e sem perguntar nada à pessoa (ela já deu o OK do
 conteúdo na Fase 2 — este passo é consequência daquele, não uma decisão nova):
 
-1. Registre no controle de versão do cérebro **tudo que mudou nesta ingestão** — as notas novas,
-   as pastas e arquivos de entidade criados, os `MAPA.md` atualizados e os brutos que foram para
-   `arquivo/`. A descrição do registro diz, em uma linha e em português, o que entrou (por
-   exemplo: "ingestao: 3 itens — fornecedor Rio Doce, reclamação do caixa 3, reforma do
-   estacionamento").
-2. Envie esse registro ao repositório do cérebro no GitHub.
-3. Confirme em uma linha, junto do resumo final, que o que foi gravado já está no GitHub.
+1. **Acrescente uma linha ao `log.md`** — o diário do cérebro, na raiz. Vai **no fim do arquivo**,
+   embaixo de tudo, sem apagar nem reescrever nada do que já está lá:
+
+   ```
+   ## [AAAA-MM-DD] resumo de uma linha do que entrou
+   Onde foi parar: as áreas e pastas que receberam alguma coisa
+   ```
+
+   A data é a de hoje — a data em que a ingestão rodou, não a dos fatos que entraram (essa já está
+   dentro de cada nota). O resumo é uma linha só, em português, do mesmo teor da descrição do
+   registro do passo seguinte.
+
+   **Por que isso importa e não é burocracia:** a nota guarda a data **do fato**, e um fato de hoje
+   muitas vezes vai parar numa nota criada semanas atrás. Quando isso acontece, procurar pela data
+   de hoje não acha nada — e o lote inteiro fica invisível para qualquer pergunta de tempo ("o que
+   entrou essa semana?"). Esta linha é o único lugar do cérebro que responde isso.
+
+   Se o `log.md` não existir — cérebro montado antes de ele passar a existir —, crie o arquivo com
+   um título na primeira linha (`# Diário do cérebro`) e comece a partir daí, sem tentar recuperar
+   o histórico antigo.
+2. Registre no controle de versão do cérebro **tudo que mudou nesta ingestão** — as notas novas,
+   as pastas e arquivos de entidade criados, os `MAPA.md` atualizados, a linha nova do `log.md` e
+   os brutos que foram para `arquivo/`. A descrição do registro diz, em uma linha e em português,
+   o que entrou (por exemplo: "ingestao: 3 itens — fornecedor Rio Doce, reclamação do caixa 3,
+   reforma do estacionamento").
+3. Envie esse registro ao repositório do cérebro no GitHub.
+4. Confirme em uma linha, junto do resumo final, que o que foi gravado já está no GitHub.
 
 **Se o envio não funcionar** — sem internet, acesso à conta expirado, qualquer outro motivo —
 **não desfaça nada e não repita a gravação**: o trabalho está salvo no computador e não se perde.
@@ -224,6 +251,10 @@ local e avise, em uma linha, que falta ligar o cérebro ao GitHub para que ele s
 - Não grave nada antes do OK da Fase 2 — nem os itens "óbvios".
 - Não termine a ingestão sem tentar enviar ao GitHub (Fase 5) — e não esconda a falha, se ela
   acontecer.
+- Não termine a ingestão sem a linha no `log.md` — um lote sem linha no diário some de qualquer
+  pergunta de data.
+- Não acrescente decisão nova sem olhar se ela derruba alguma antiga — e, se derrubar, não deixe a
+  antiga marcada como ativa.
 - Não mova uma tarefa para a pasta de um cliente só porque ela cita o nome dele — as duas decisões
   da Fase 3 são independentes, e a pasta do item sai só da Decisão 1.
 - Não crie uma segunda pasta para uma entidade que já tem a sua, nem com o nome escrito de outro

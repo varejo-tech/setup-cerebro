@@ -7,3 +7,34 @@ Cada decisão importante vira um bloco aqui, neste formato:
 - **Contexto:** o que estava em jogo.
 - **Decisão:** o que foi decidido.
 - **Status:** ativa, revista ou cancelada.
+
+## Quando uma decisão nova derruba uma antiga
+
+Este arquivo só cresce: decisão nova entra embaixo, e o que já está escrito
+não se reescreve. Só que isso cria um problema com o tempo — a decisão antiga
+continua ali dizendo **ativa**, como se ainda valesse, e quem ler primeiro vai
+achar que vale. Ninguém lê o arquivo inteiro antes de agir.
+
+Por isso, quando uma decisão nova derrubar uma antiga, **volte na antiga e
+marque**. Troque só a linha do status por esta:
+
+- **Status:** ⛔ REVOGADA em DD/MM por [a decisão nova]. Hoje o que vale é:
+  [uma frase dizendo o que se faz agora].
+
+Três regras:
+
+1. **Marque na decisão antiga, não só na nova.** Quem tropeçar na antiga
+   precisa descobrir ali mesmo que ela caiu.
+2. **Não apague nem reescreva o texto dela.** Só a linha do status muda. A
+   decisão continua legível do jeito que foi tomada — dá para entender depois
+   por que se pensava assim na época.
+3. **Diga o que vale hoje.** Um "não vale mais" solto deixa quem lê sem saber
+   o que fazer no lugar.
+
+E não confunda três coisas diferentes:
+
+- **Revogada** — foi derrubada, não vale mais.
+- **Concluída** — foi feita até o fim, deu certo, acabou.
+- **Ainda ativa, mas com detalhe desatualizado** — a decisão vale, só alguma
+  informação dentro dela envelheceu. Aí é só acrescentar a informação nova; o
+  status continua ativa.

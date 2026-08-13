@@ -1,0 +1,40 @@
+# Diário do cérebro
+
+O que entrou aqui dentro, e quando. Uma linha por vez que a `/ingestao` roda.
+
+Serve para duas coisas. Para {{DONO}}: olhar de cima e lembrar o que andou
+acontecendo — "o que eu guardei essa semana?", "quando foi mesmo que o
+problema com aquele fornecedor apareceu?". Para o agente: achar as coisas por
+data, que é como a gente costuma lembrar.
+
+**Por que isso não é repetição do resto do cérebro.** O `MAPA.md` sabe *onde*
+cada assunto mora, mas não sabe *quando* nada aconteceu. E a data que fica
+escrita numa nota é a data daquele fato — não a data em que o assunto voltou.
+Uma conversa de hoje pode entrar numa nota que nasceu há três semanas, e aí
+procurar pela data de hoje não acha nada. Aqui acha.
+
+## Como procurar aqui dentro
+
+Cada entrada começa com a data entre colchetes, sempre no mesmo formato. Isso
+deixa achar por data, por mês, ou simplesmente ler as últimas linhas para
+saber o que foi mais recente. O agente sabe fazer essa busca sozinho — é só
+pedir a ele em português: *"o que entrou no cérebro essa semana?"*.
+
+## Formato de cada entrada
+
+```
+  ## [AAAA-MM-DD] resumo de uma linha do que entrou
+  Onde foi parar: as áreas e pastas que receberam alguma coisa
+```
+
+*(o exemplo acima está recuado de propósito, para não ser confundido com uma
+entrada de verdade)*
+
+Entrada nova vai sempre **no fim do arquivo**, embaixo de tudo. Nada aqui se
+apaga nem se reescreve — é histórico. Quem escreve é a `/ingestao`, ao
+terminar cada rodada; {{DONO}} não precisa mexer neste arquivo.
+
+---
+
+## [{{DATA_ISO}}] o cérebro foi criado
+Onde foi parar: estrutura inicial montada pelo `/setup-cerebro`
