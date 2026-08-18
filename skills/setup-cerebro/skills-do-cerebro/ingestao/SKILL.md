@@ -11,9 +11,24 @@ nenhuma pula a anterior.
 
 ## Fase 1 — Ler o lote inteiro
 
-Antes de decidir qualquer coisa sobre qualquer item, abra e leia **tudo** que está pendente:
+**Comece trazendo para esta máquina o que está no GitHub.** A caixa de entrada não recebe só o que
+foi salvo neste computador: se a pessoa tiver um agente rodando em outro lugar — num servidor,
+atendendo pelo celular —, ele deposita direto no repositório, e o que ele guardou desde a última
+vez só aparece aqui depois que você o trouxer. Sem isso a ingestão trabalha com um lote incompleto
+**e sem nenhum aviso**, e o envio da Fase 5 acaba recusado no fim, porque o repositório andou para
+a frente enquanto esta máquina ficou parada.
+
+Se não der para trazer — sem internet, acesso à conta expirado, qualquer outro motivo —, **pare e
+diga o motivo em uma linha**, em linguagem simples, sem processar nada. Seguir com o que está no
+disco faz a pessoa fechar a ingestão achando que a caixa está vazia, enquanto o que o agente dela
+depositou continua lá, invisível.
+
+Com isso feito, abra e leia **tudo** que está pendente — qualquer arquivo dentro de `inbox/`,
+solto na raiz da pasta ou dentro de qualquer subpasta:
 
 - os itens dentro de `inbox/<dono>/` — o que caiu ali pelo `/salvar`;
+- os itens dentro de qualquer outra subpasta — é onde deposita um agente que roda fora deste
+  computador, numa subpasta com o nome dele;
 - qualquer arquivo solto direto na raiz de `inbox/`, **inclusive `.md` que a pessoa tenha
   copiado de um cérebro antigo dela** — mesmo que venha num formato diferente deste (sem
   frontmatter, com `[[wikilinks]]`, cabeçalhos ou convenções próprias). Trate como material bruto
